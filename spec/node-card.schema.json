@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/Seek-Key-LTD/asn-protocol/spec/node-card.schema.json",
+  "title": "ASN Node Card",
+  "type": "object",
+  "required": ["node_id", "jurisdiction_profile", "runtime_digest", "egress_policy", "data_classes"],
+  "properties": {
+    "node_id": {"type": "string"},
+    "jurisdiction_profile": {"type": "string"},
+    "runtime_digest": {"type": "string"},
+    "egress_policy": {"type": "string"},
+    "data_classes": {"type": "array", "items": {"type": "string"}},
+    "providers": {"type": "array", "items": {"type": "string"}},
+    "capacity_class": {"type": "string"}
+  },
+  "additionalProperties": false
+}

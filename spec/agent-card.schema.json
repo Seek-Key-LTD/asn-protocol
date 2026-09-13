@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/Seek-Key-LTD/asn-protocol/spec/agent-card.schema.json",
+  "title": "ASN Agent Card",
+  "type": "object",
+  "required": ["protocol_version", "seat_id", "display_name", "visibility", "capabilities", "consent_exports"],
+  "properties": {
+    "protocol_version": {"type": "string"},
+    "seat_id": {"type": "string", "pattern": "^[a-z0-9][a-z0-9-]{2,63}$"},
+    "display_name": {"type": "string", "minLength": 1},
+    "visibility": {"enum": ["public", "private", "pseudonymous"]},
+    "capabilities": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+    "consent_exports": {"type": "array", "items": {"$ref": "#/$defs/export"}},
+    "topics": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+    "contact": {"type": "string"}
+  },
+  "$defs": {
+    "export": {
+      "type": "object",
+      "required": ["path", "mode", "data_class"],
+      "properties": {
+        "path": {"type": "string"},
+        "mode": {"enum": ["read", "write-with-approval"]},
+        "data_class": {"enum": ["public", "task-scoped", "private-export"]},
+        "expires_at": {"type": "string", "format": "date-time"}
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

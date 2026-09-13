@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/Seek-Key-LTD/asn-protocol/spec/context-package.schema.json",
+  "title": "ASN Context Package",
+  "type": "object",
+  "required": ["package_id", "purpose", "recipient_seat", "sources", "grant", "expires_at"],
+  "properties": {
+    "package_id": {"type": "string"},
+    "purpose": {"type": "string"},
+    "recipient_seat": {"type": "string"},
+    "sources": {"type": "array", "items": {"type": "string"}},
+    "grant": {"type": "string"},
+    "expires_at": {"type": "string", "format": "date-time"},
+    "writeback_policy": {"enum": ["none", "proposal-only", "owner-approval"]}
+  },
+  "additionalProperties": false
+}

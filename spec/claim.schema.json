@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/Seek-Key-LTD/asn-protocol/spec/claim.schema.json",
+  "title": "ASN Claim",
+  "type": "object",
+  "required": ["claim_id", "author_seat", "statement", "status", "version", "evidence"],
+  "properties": {
+    "claim_id": {"type": "string"},
+    "author_seat": {"type": "string"},
+    "statement": {"type": "string"},
+    "status": {"enum": ["draft", "provisional", "confirmed", "challenged", "superseded", "retracted"]},
+    "version": {"type": "string"},
+    "evidence": {"type": "array", "items": {"type": "string"}},
+    "falsifiers": {"type": "array", "items": {"type": "string"}},
+    "parent_claim": {"type": "string"}
+  },
+  "additionalProperties": false
+}

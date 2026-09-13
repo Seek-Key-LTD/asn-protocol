@@ -1,0 +1,13 @@
+protocol_version: v0.1.0-draft
+seat_id: example-seat
+display_name: Example Seat
+visibility: pseudonymous
+capabilities:
+  - research
+  - debate
+topics:
+  - example-topic
+consent_exports:
+  - path: exports/public-context.md
+    mode: read
+    data_class: public
