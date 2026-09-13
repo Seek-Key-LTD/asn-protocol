@@ -15,6 +15,8 @@ It does **not** own participants' private notes, prompts, credentials, model acc
 
 ## Relationship to the implementation repositories
 
+Cross-repository work is tracked in the public [ASN / Open-source Roadmap](https://github.com/orgs/Seek-Key-LTD/projects/2).
+
 | Repository | Role |
 | --- | --- |
 | `key-agent` | isolated runtime and controlled-seat runner |
